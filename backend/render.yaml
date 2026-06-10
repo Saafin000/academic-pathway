@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: academic-pathway-api
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Add the following in the Render dashboard (do NOT commit real values):
+      # - key: SUPABASE_URL
+      #   value: <your_supabase_url>
+      # - key: SUPABASE_ANON_KEY
+      #   value: <your_supabase_anon_key>
+      # - key: FRONTEND_URL
+      #   value: https://your-app.vercel.app
+      # - key: SMTP_HOST
+      #   value: smtp.gmail.com
+      # - key: SMTP_PORT
+      #   value: 587
+      # - key: SMTP_USER
+      #   value: you@gmail.com
+      # - key: SMTP_PASS
+      #   value: <app_password>
